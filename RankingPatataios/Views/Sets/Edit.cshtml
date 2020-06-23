@@ -1,0 +1,59 @@
+﻿@model RankingPatataios.Models.Set
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Set</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Numero" class="control-label"></label>
+                <input asp-for="Numero" class="form-control" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GamesGanhosJogador1" class="control-label"></label>
+                <input asp-for="GamesGanhosJogador1" class="form-control" />
+                <span asp-validation-for="GamesGanhosJogador1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GamesGanhosJogador2" class="control-label"></label>
+                <input asp-for="GamesGanhosJogador2" class="form-control" />
+                <span asp-validation-for="GamesGanhosJogador2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TieBreakJogador1" class="control-label"></label>
+                <input asp-for="TieBreakJogador1" class="form-control" />
+                <span asp-validation-for="TieBreakJogador1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TieBreakJogador2" class="control-label"></label>
+                <input asp-for="TieBreakJogador2" class="form-control" />
+                <span asp-validation-for="TieBreakJogador2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JogoId" class="control-label"></label>
+                <select asp-for="JogoId" class="form-control" asp-items="ViewBag.JogoId"></select>
+                <span asp-validation-for="JogoId" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
